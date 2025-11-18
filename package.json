@@ -1,5 +1,5 @@
 {
-  "name": "everything-search-server",
+  "name": "everything-search-mcp",
   "version": "1.0.0",
   "description": "MCP server for Everything Search integration",
   "type": "module",
@@ -9,7 +9,7 @@
     "start": "node build/index.js"
   },
   "keywords": ["mcp", "everything-search"],
-  "author": "",
+  "author": "Bluscream <bluscream@example.com>, Cursor.AI",
   "license": "ISC",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.4",

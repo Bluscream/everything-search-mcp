@@ -240,6 +240,6 @@ export const createServer = async () => {
   const transport = new StdioServerTransport();
   await server.connect(transport);
   
-  console.error('Everything Search MCP server running on stdio');
+  console.error('Everything Search MCP running on stdio');
   return server;
 };

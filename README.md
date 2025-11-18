@@ -1,4 +1,4 @@
-# Everything Search MCP Server
+# Everything Search MCP
 
 An MCP server that provides integration with Everything Search Engine, allowing powerful file search capabilities through the Model Context Protocol.
 
