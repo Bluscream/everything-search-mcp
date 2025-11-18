@@ -111,13 +111,26 @@ export const createServer = async () => {
         `${params.scope}\\${params.query}` :
         params.query;
 
-      const response = await axios.get("http://127.0.0.1:8011/", {
+      // Get configuration from environment variables
+      const port = process.env.EVERYTHING_HTTP_PORT || "80";
+      const username = process.env.EVERYTHING_HTTP_USERNAME;
+      const password = process.env.EVERYTHING_HTTP_PASSWORD;
+      
+      // Build auth config if credentials are provided
+      const auth = username && password ? {
+        username: username,
+        password: password
+      } : undefined;
+
+      const response = await axios.get(`http://127.0.0.1:${port}/`, {
         params: {
           search: searchQuery,
           json: 1,
           path_column: 1,
           size_column: 1,
           date_modified_column: 1,
+          date_created_column: 1,
+          attributes_column: 1,
           case: params.caseSensitive ? 1 : 0,
           wholeword: params.wholeWord ? 1 : 0,
           regex: params.regex ? 1 : 0,
@@ -126,6 +139,7 @@ export const createServer = async () => {
           sort: params.sortBy || "name",
           ascending: params.ascending === false ? 0 : 1,
         },
+        auth: auth,
         timeout: 5000, // 5 second timeout
       });
 
@@ -226,6 +240,6 @@ export const createServer = async () => {
   const transport = new StdioServerTransport();
   await server.connect(transport);
   
-  console.error('Everything Search MCP server running on stdio');
+  console.error('Everything Search MCP running on stdio');
   return server;
 };

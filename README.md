@@ -1,4 +1,4 @@
-# Everything Search MCP Server
+# Everything Search MCP
 
 An MCP server that provides integration with Everything Search Engine, allowing powerful file search capabilities through the Model Context Protocol.
 
@@ -30,10 +30,10 @@ An MCP server that provides integration with Everything Search Engine, allowing 
 1. Open Everything Search
 2. Go to Tools > Options > HTTP Server
 3. Enable HTTP Server
-4. Set the HTTP Server port to 8011 (this is the default port used by this MCP server)
+4. Set the HTTP Server port to 80 (this is the default port used by this MCP server)
 5. Click OK to save changes
 
-Note: If you need to use a different port, you'll need to modify the port in `src/server.ts` where it connects to `http://127.0.0.1:8011/`
+Note: If you need to use a different port, set the `EVERYTHING_HTTP_PORT` environment variable or modify the port in `src/server.ts` where it connects to `http://127.0.0.1:80/`
 
 ## Installation
 
