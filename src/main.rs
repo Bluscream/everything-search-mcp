@@ -1,6 +1,5 @@
 //! everything-search-mcp — filename search via a Voidtools Everything HTTP server.
 
-mod args;
 mod tools;
 
 use std::sync::Arc;
