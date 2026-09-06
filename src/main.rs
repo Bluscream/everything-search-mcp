@@ -1,13 +1,11 @@
 //! everything-search-mcp — filename search via a Voidtools Everything HTTP server.
 
-mod tools;
-
 use std::sync::Arc;
 
 use clap::Parser;
 use mcp_toolkit::ServerOptions;
 
-use tools::{Endpoint, SearchTools};
+use everything_search_mcp::tools::{Endpoint, SearchTools};
 
 #[derive(Parser, Debug)]
 #[command(
